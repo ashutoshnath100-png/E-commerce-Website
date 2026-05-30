@@ -23,6 +23,7 @@ export default function Login() {
             const res = await api.post('/auth/login', form);
             console.log(res.data);
             localStorage.setItem('token', res.data.token);
+            localStorage.setItem('userId', res.data.user.id);
             setMsg("Login successful!");
             setTimeout(() => {
                 navigate("/");

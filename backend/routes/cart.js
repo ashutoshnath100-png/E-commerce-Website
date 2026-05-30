@@ -6,7 +6,7 @@ const router = express.Router();
 // Add item to cart
 router.post('/add', addToCart);
 // Remove item from cart
-router.post('/remove', removeItem);
+router.delete('/remove', removeItem);
 // Update item quantity in cart
 router.post('/update', updateQuantity);
 // Get cart by user ID
