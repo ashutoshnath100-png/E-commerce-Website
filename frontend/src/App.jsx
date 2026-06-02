@@ -8,6 +8,8 @@ import AddProduct from "./admin/AddProduct";
 import ProductList from "./admin/ProductList";
 import Navbar from "./components/Navbar";
 import Cart from "./pages/Cart";
+import CheckoutAddress from "./pages/CheckoutAddress";
+import Checkout from "./pages/Checkout";
 
 function Layout() {
   return (
@@ -30,7 +32,9 @@ const router = createBrowserRouter([
       { path: "/admin/products", element: <ProductList /> },
       { path: "/admin/products/add", element: <AddProduct /> },
       { path: "/admin/products/update/:id", element: <EditProduct /> },
-      { path: "/cart", element: <Cart /> }
+      { path: "/cart", element: <Cart /> },
+      { path: "/checkout-address", element: <CheckoutAddress /> },
+      { path: "/checkout", element: <Checkout /> }
     ]
   }
 
