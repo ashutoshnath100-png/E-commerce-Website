@@ -50,32 +50,57 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-blue-500 text-white p-4 flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold">Winzoo Store</Link>
+  <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      
+      <Link
+        to="/"
+        className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition"
+      >
+        Winzoo Store
+      </Link>
 
-            <div className="flex items-center gap-4">
-                    <Link to="/cart" className="relative text-xl">
-                    ^@^
-                    {
-                     cartCount > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                            {cartCount}
-                        </span>
-                     )
-                    }
-                    </Link>
-                    {
-                        !userId ? (
-                            <>
-                            <Link to="/login" className="text-lg">Login</Link>
-                            <Link to="/signup" className="text-lg">Signup</Link>
-                            </>
-                        ): (
-                            <button onClick={logout} className="text-lg">Logout</button>
-                        )
-                    }
-                
-            </div>
-        </nav>
-    )
+      <div className="flex items-center gap-6">
+        
+        <Link
+          to="/cart"
+          className="relative text-2xl hover:scale-110 transition"
+        >
+          🛒
+
+          {cartCount > 0 && (
+            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+              {cartCount}
+            </span>
+          )}
+        </Link>
+
+        {!userId ? (
+          <>
+            <Link
+              to="/login"
+              className="font-medium hover:text-blue-600 transition"
+            >
+              Login
+            </Link>
+
+            <Link
+              to="/signup"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Signup
+            </Link>
+          </>
+        ) : (
+          <button
+            onClick={logout}
+            className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+          >
+            Logout
+          </button>
+        )}
+      </div>
+    </div>
+  </nav>
+);
 }

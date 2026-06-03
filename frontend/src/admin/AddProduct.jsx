@@ -33,26 +33,39 @@ const handleSubmit = async (e) => {
     }
 }
 
-return(
-    <div className="max-w-lg mx-auto mt-10 bg-white p-6 shadow rounded">
-        <h2 className="text-2xl font-bold mb-6">Add New Product</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-            {
-                Object.keys(form).map((key) => (
-                    <input key={key}
-                    name={key}
-                    placeholder={key}
-                    value={form[key]}
-                    onChange={handleChange}
-                    className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                ))
-}
+return (
+  <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+    <div className="w-full max-w-lg bg-white p-8 rounded-2xl shadow-lg">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+        Add New Product
+      </h2>
 
-            <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200">
-                Add Product
-            </button>
-        </form>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {Object.keys(form).map((key) => (
+          <div key={key}>
+            <label className="block text-sm font-medium text-gray-700 mb-1 capitalize">
+              {key}
+            </label>
+
+            <input
+              type={key === "price" || key === "stock" ? "number" : "text"}
+              name={key}
+              placeholder={`Enter ${key}`}
+              value={form[key]}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+            />
+          </div>
+        ))}
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+        >
+          Add Product
+        </button>
+      </form>
     </div>
-)
+  </div>
+);
 }

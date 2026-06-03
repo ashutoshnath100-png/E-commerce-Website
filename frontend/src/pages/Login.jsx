@@ -34,33 +34,77 @@ export default function Login() {
     };
 
     return (
-        <div className="flex items-center min-h-screen bg-gray-100 px-4">
-            <div className="flex-1 max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold mb-4">Login to Your Account</h2>
-                {msg && <p className="text-red-500 mb-4">{msg}</p>}</div>
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={handleChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Enter Password"
-                    value={form.password}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
-                    required
-                />
-                <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Login
-                </button>
-            </form>
+  <div className="min-h-screen bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center px-4">
+
+    <div className="w-full max-w-md">
+
+      <div className="bg-white rounded-3xl shadow-2xl p-8">
+
+        <div className="text-center mb-8">
+          <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-4xl">🛍️</span>
+          </div>
+
+          <h2 className="text-3xl font-bold text-gray-800">
+            Welcome Back
+          </h2>
+
+          <p className="text-gray-500 mt-2">
+            Login to continue shopping
+          </p>
         </div>
-    );
+
+        {msg && (
+          <div className="bg-red-100 text-red-600 p-3 rounded-xl mb-4 text-sm">
+            {msg}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-5">
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Password
+            </label>
+
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              value={form.password}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition"
+          >
+            Login
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+);
 }
