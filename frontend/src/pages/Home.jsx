@@ -41,7 +41,7 @@ export default function Home() {
           message: "",
           type: "",
         });
-      }, 3000);
+      }, 1000);
 
       return;
     }
@@ -88,7 +88,7 @@ export default function Home() {
         message: "",
         type: "",
       });
-    }, 3000);
+    }, 1000);
   }
 };
 
