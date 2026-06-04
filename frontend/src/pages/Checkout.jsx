@@ -78,7 +78,7 @@ export default function Checkout() {
 
             <div className="space-y-5">
 
-              {address.map((addr) => (
+              {address?.map((addr) => (
                 <label
                   key={addr._id}
                   className={`block p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${

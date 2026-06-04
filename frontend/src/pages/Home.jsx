@@ -188,7 +188,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-        {products.map((product) => (
+        {products?.map((product) => (
           <div
             key={product._id}
             className="
