@@ -16,7 +16,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://e-commerce-website-ltwgjqrjx-ashutosh-nath-s-projects.vercel.app"
+      "https://e-commerce-website-ashutosh-nath-s-projects.vercel.app/"
     ],
     credentials: true,
   })
